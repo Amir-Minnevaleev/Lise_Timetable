@@ -89,6 +89,19 @@ body {
     height: 80px;
     animation: spin 1.5s linear infinite;
 }
+#notifications-container {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.notification-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
 
 @keyframes spin {
     0% {
