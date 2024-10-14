@@ -17,11 +17,11 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     margin: 5vh;
-    /* Это задает выравнивание всех дочерних элементов по верху */
+    width: 100%; /* Это предотвратит сдвиг элементов */
 }
 
 .timetable {
-    width: 80%;
+    width: 10%;
     padding: 20px;
     border: 1px solid black;
 }
@@ -40,15 +40,22 @@ body {
 }
 
 .datetime-window {
-    width: 20%;
+    width: 30%;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: black;
     text-align: center;
-    background-color: white;
-    padding: 2px;
+    
+}
+
+.coloumn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Выравнивание по правому краю */
+    width: 95%; /* Задайте фиксированную ширину */
+    margin: 0;
+    padding: 0;
     border: 1px solid black;
-    position: relative; /* Это необходимо для выравнивания */
-    right: 0; /* Элемент всегда будет прижат к правой стороне */
-    top: 0;
-    align-self: flex-start; /* Гарантирует, что окно даты и времени будет выровнено по верху таблицы */
 }
 
 #current-date,
@@ -58,13 +65,15 @@ body {
 }
 
 #daily-routine {
-    margin-top: 20px;
+    width: 30%;
     font-size: 1.2rem;
+    margin-top: 2vh;
     color: black;
+    text-align: center;
 }
 
 #daily-routine p {
-    padding: 1vh;
+    padding: 0 0 2vh 0;
 }
 
 /* Лоадер */
@@ -83,30 +92,34 @@ body {
 
 .loader {
     border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db;
+    border-top: 8px solid #90100d;
     border-radius: 50%;
     width: 80px;
     height: 80px;
     animation: spin 1.5s linear infinite;
 }
+
 #notifications-container {
     margin-top: 20px;
-    width: 100%;
+    align-items: center;
+    margin-right: 10%;
 }
 
 .notification-item {
-    border: 1px solid #ccc;
-    padding: 10px;
+    padding: 10px 5vh;
     margin-bottom: 10px;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: wheat;
+    align-items: center;
 }
+
 
 
 @keyframes spin {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -125,6 +138,7 @@ body {
     .datetime-window {
         width: 100%;
         margin-top: 20px;
-        position: static; /* Сбрасываем position для мобильных устройств */
+        position: static;
+        /* Сбрасываем position для мобильных устройств */
     }
 }

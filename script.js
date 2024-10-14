@@ -108,7 +108,6 @@ async function displayLessonSchedule() {
         <thead>
             <tr>
                 <th>Предмет</th>
-                <th>Кабинет</th>
             </tr>
         </thead>
         <tbody>
