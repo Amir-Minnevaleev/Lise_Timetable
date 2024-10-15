@@ -107,8 +107,7 @@ async function displayLessonSchedule() {
     table.innerHTML = `
         <thead>
             <tr>
-                <th>Предмет</th>
-                <th>Кабинет</th>
+                <th>{table.}</th>
             </tr>
         </thead>
         <tbody>
