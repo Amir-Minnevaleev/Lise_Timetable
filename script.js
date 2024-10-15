@@ -108,6 +108,7 @@ async function displayLessonSchedule() {
         <thead>
             <tr>
                 <th>Предмет</th>
+                <th>Кабинет</th>
             </tr>
         </thead>
         <tbody>
@@ -150,11 +151,22 @@ function updateDateTime() {
 setInterval(updateDateTime, 1000);
 
 // Функция для отображения распорядка дня на странице
+// Функция для форматирования времени из ISO строки
+// Функция для форматирования времени из ISO строки
+// Функция для форматирования времени из ISO строки
+// Функция для возврата времени как строки, если она есть
+function formatTime(isoString) {
+    return isoString ? isoString : 'Время не указано';
+}
+
+
+// Функция для отображения распорядка дня на странице
+// Функция для отображения распорядка дня на странице
 async function displayDailyRoutine() {
     const routineDiv = document.getElementById('daily-routine');
     const routine = await fetchDailyRoutine(); // Получаем распорядок дня с API
 
-    if (!routine || typeof routine !== 'object') {
+    if (!routine || !Array.isArray(routine) || routine.length === 0) {
         routineDiv.textContent = 'Распорядок дня недоступен.';
         return;
     }
@@ -162,29 +174,28 @@ async function displayDailyRoutine() {
     // Очищаем содержимое перед вставкой
     routineDiv.innerHTML = '<h3>Распорядок дня:</h3>';
 
-    // Функция для рекурсивного отображения данных, если значение объекта — тоже объект
-    function renderObject(obj) {
-        const fragment = document.createDocumentFragment();
+    // Проходим по каждому уроку и выводим его красиво
+    routine.forEach(lesson => {
+        const lessonElement = document.createElement('p');
 
-        Object.keys(obj).forEach(key => {
-            const value = obj[key];
+        // Просто отображаем время начала и окончания, как оно есть
+        const startTime = formatTime(lesson.start_time);
+        const endTime = formatTime(lesson.end_time);
 
-            const item = document.createElement('p');
-            if (typeof value === 'object' && value !== null) {
-                item.textContent = `${key}:`;
-                fragment.appendChild(renderObject(value)); // Рекурсивно обрабатываем вложенные объекты
-            } else {
-                item.textContent = `${value}`;
-                fragment.appendChild(item);
-            }
-        });
+        // Пример вывода: "Математика — 08:00 до 09:00"
+        lessonElement.textContent = `${lesson.name}: ${startTime} - ${endTime}`;
+        
+        routineDiv.appendChild(lessonElement);
+    });
+}
 
-        return fragment;
-    }
+// Запуск функций при загрузке страницы
+window.addEventListener('DOMContentLoaded', async () => {
+    await displayDailyRoutine(); // Отображаем распорядок дня
+});
 
     // Добавляем распорядок дня в элемент div
-    routineDiv.appendChild(renderObject(routine));
-}
+
 
 // Функция для скрытия лоадера и показа контента
 function hideLoader() {
