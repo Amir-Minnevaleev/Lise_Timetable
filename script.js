@@ -107,7 +107,7 @@ async function displayLessonSchedule() {
     table.innerHTML = `
         <thead>
             <tr>
-                <th>{table.}</th>
+                <th>class</th>
             </tr>
         </thead>
         <tbody>
@@ -149,11 +149,6 @@ function updateDateTime() {
 // Обновляем время каждую секунду
 setInterval(updateDateTime, 1000);
 
-// Функция для отображения распорядка дня на странице
-// Функция для форматирования времени из ISO строки
-// Функция для форматирования времени из ISO строки
-// Функция для форматирования времени из ISO строки
-// Функция для возврата времени как строки, если она есть
 function formatTime(isoString) {
     return isoString ? isoString : 'Время не указано';
 }
@@ -205,6 +200,7 @@ function hideLoader() {
     mainContent.style.display = 'block'; // Показываем основной контент
 }
 
+
 // Запуск функций при загрузке страницы
 window.addEventListener('DOMContentLoaded', async () => {
     updateDateTime(); // Запускаем обновление даты и времени
@@ -212,6 +208,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     await displayNotifications(); // Отображаем уведомления
     await displayDailyRoutine(); // Отображаем распорядок дня
     await displayLessonSchedule(); // Отображаем расписание уроков
+    await hideLoader(); // Скрываем лоадер после загрузки данных
 
-    hideLoader(); // Скрываем лоадер после загрузки данных
 });
