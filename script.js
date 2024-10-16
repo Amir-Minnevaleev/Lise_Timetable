@@ -183,7 +183,7 @@ async function displayDailyRoutine() {
 
         // Пример вывода: "Математика — 08:00 до 09:00"
         lessonElement.textContent = `${lesson.name}: ${startTime} - ${endTime}`;
-        
+
         routineDiv.appendChild(lessonElement);
     });
 }
@@ -193,7 +193,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     await displayDailyRoutine(); // Отображаем распорядок дня
 });
 
-    // Добавляем распорядок дня в элемент div
+// Добавляем распорядок дня в элемент div
 
 
 // Функция для скрытия лоадера и показа контента
