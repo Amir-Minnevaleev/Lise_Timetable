@@ -107,7 +107,7 @@ async function displayLessonSchedule() {
     table.innerHTML = `
         <thead>
             <tr>
-                <th>class</th>
+                <th>${lesson.schedule.classList}</th>
             </tr>
         </thead>
         <tbody>
@@ -153,8 +153,6 @@ function formatTime(isoString) {
     return isoString ? isoString : 'Время не указано';
 }
 
-
-// Функция для отображения распорядка дня на странице
 // Функция для отображения распорядка дня на странице
 async function displayDailyRoutine() {
     const routineDiv = document.getElementById('daily-routine');

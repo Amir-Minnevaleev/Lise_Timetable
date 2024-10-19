@@ -12,17 +12,14 @@ body {
     color: black;
 }
 
-/*.container {
+.container {
     display: block;
     width: 100%;
     height: 100%;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 5vh;
-    
-    Это предотвратит сдвиг элементов 
 }
-*/
+
 
 
 .timetable {
@@ -40,6 +37,9 @@ body {
     text-align: center;
     font-size: 2rem;
     color: black;
+    margin: 0;
+    top: 0;
+    border-bottom: 1px solid wheat;
 }
 
 .datetime-window {
@@ -47,10 +47,10 @@ body {
     font-size: 1.2rem;
     color: black;
     text-align: center;
-    justify-content: right;
     float: right;
     top: 0;
     height: 33%;
+    margin: 0;
     background-color: #90100d;
     color: white;
 }
@@ -63,7 +63,6 @@ div#daily-routine {
     clear: both;
     background-color: #90100d;
     padding-top: 5vh;
-
 }
 
 div#notifications-container {
@@ -115,8 +114,8 @@ div#notifications-container {
 
 #notifications-container {
     padding-top: 3vh;
-    display: flex;
     flex-direction: column;
+    text-align: center;
     align-items: center;
     justify-content: center;
     margin-right: 0;
@@ -134,7 +133,7 @@ div#notifications-container {
     text-align: left;
     padding-right: 5vh;
     align-items: center;
-    border-radius: 5px;
+    text-align: center;
 }
 
 
@@ -149,7 +148,7 @@ div#notifications-container {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .container {
         flex-direction: column;
         align-items: center;
@@ -165,4 +164,43 @@ div#notifications-container {
         position: static;
         /* Сбрасываем position для мобильных устройств */
     }
+
+    .notification-item {
+        width: 100%;
+    }
+
+    #daily-routine {
+        width: 100%;
+        font-size: 1.2rem;
+        color: black;
+        float: right;
+        text-align: center;
+        color: white;
+        height: 33%;
+    }
+
+    #notifications-container {
+        padding-top: 3vh;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        float: right;
+        width: 100%;
+        height: 33%;
+        background-color: #90100d;
+        color: white;
+        /* Убираем правое смещение */
+    }
+
+
+    .notification-item {
+        margin-bottom: 3vh;
+        text-align: left;
+        align-items: center;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+
+
 }
