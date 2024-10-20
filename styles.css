@@ -10,7 +10,11 @@ body {
     font-size: 1.5rem;
     background-color: #fff;
     color: black;
+    width: 100%;
+    height: 100%;
 }
+
+
 
 .container {
     display: block;
@@ -20,6 +24,15 @@ body {
     align-items: flex-start;
 }
 
+.timetable {
+    flex-grow: 1; /* Элемент займет оставшееся пространство */
+    padding: 20px;
+}
+
+.datetime-window {
+    flex-shrink: 0; /* Оставляем фиксированную ширину для этого элемента */
+    width: 20%;
+}
 
 
 .timetable {
@@ -38,6 +51,7 @@ body {
     font-size: 2rem;
     color: black;
     margin: 0;
+    padding: 0;
     top: 0;
     border-bottom: 1px solid wheat;
 }
@@ -85,6 +99,7 @@ div#notifications-container {
     height: 33%;
 }
 
+
 #daily-routine p {
     padding: 2vh 0;
 }
@@ -111,6 +126,7 @@ div#notifications-container {
     height: 80px;
     animation: spin 1.5s linear infinite;
 }
+
 
 #notifications-container {
     padding-top: 3vh;
@@ -200,7 +216,6 @@ div#notifications-container {
         border-radius: 5px;
         text-align: center;
     }
-
-
-
 }
+
+
