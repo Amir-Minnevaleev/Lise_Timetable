@@ -14,8 +14,6 @@ body {
     height: 100%;
 }
 
-
-
 .container {
     display: block;
     width: 100%;
@@ -25,12 +23,14 @@ body {
 }
 
 .timetable {
-    flex-grow: 1; /* Элемент займет оставшееся пространство */
+    flex-grow: 1;
+    /* Элемент займет оставшееся пространство */
     padding: 20px;
 }
 
 .datetime-window {
-    flex-shrink: 0; /* Оставляем фиксированную ширину для этого элемента */
+    flex-shrink: 0;
+    /* Оставляем фиксированную ширину для этого элемента */
     width: 20%;
 }
 
@@ -53,10 +53,10 @@ body {
     margin: 0;
     padding: 0;
     top: 0;
-    border-bottom: 1px solid wheat;
 }
 
 .datetime-window {
+    border-bottom: 1px solid white;
     width: 20%;
     font-size: 1.2rem;
     color: black;
@@ -77,6 +77,8 @@ div#daily-routine {
     clear: both;
     background-color: #90100d;
     padding-top: 5vh;
+    border-bottom: 1px solid white;
+
 }
 
 div#notifications-container {
@@ -140,7 +142,7 @@ div#notifications-container {
     height: 33%;
     background-color: #90100d;
     color: white;
-    /* Убираем правое смещение */
+    transition: opacity 1s ease-in-out;
 }
 
 
@@ -152,6 +154,9 @@ div#notifications-container {
     text-align: center;
 }
 
+.weather {
+    padding: 3vh;
+}
 
 
 @keyframes spin {
@@ -217,5 +222,3 @@ div#notifications-container {
         text-align: center;
     }
 }
-
-
