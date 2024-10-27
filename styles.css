@@ -222,3 +222,35 @@ div#notifications-container {
         text-align: center;
     }
 }
+
+@media (min-width: 1600px) {
+    body {
+        font-size: 1.8rem;
+    }
+
+    .datetime-window,
+    #daily-routine,
+    #notifications-container {
+        font-size: 1.4rem;
+    }
+
+    #date-heading {
+        font-size: 2.4rem;
+    }
+
+    #current-date,
+    #current-time {
+        font-size: 1.8rem;
+    }
+
+    .notification-item {
+        font-size: 1.4rem;
+        padding: 1vh 2vh;
+    }
+
+    .loader {
+        width: 100px;
+        height: 100px;
+        border-width: 10px;
+    }
+}
